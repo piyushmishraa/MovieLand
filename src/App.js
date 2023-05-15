@@ -1,10 +1,26 @@
 
 import './App.css';
 
+const kuchbhi = ()=>{
+  return(
+    <>
+    <p>NAME:PIYUSH</p>
+    <p>sem:4</p>
+    </>
+  )
+
+}
+
  const App=()=> {
+ 
   return (
     <div className="App">
-      <p>Hello, React</p>
+     
+     <>
+     <kuchbhi />
+     </>
+      
+      
     </div>
   );
 }
