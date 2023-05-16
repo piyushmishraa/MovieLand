@@ -1,28 +1,17 @@
-
+import { useState } from 'react';
 import './App.css';
 
-const Kuchbhi = (props) => {
-  return(
-    <>
-     <p>name:{props.name}</p>
-     <p>sem:{props.sem}</p>
-    </>
-  )
 
-}
 
  const App=()=> {
- 
+  const[counter,setcounter]=useState(0);
   return (
-    <div className="App">
-     
-     
-     <Kuchbhi name={"piyush"} sem={6}/>
-     <Kuchbhi  name={"lvda"} sem={9}/>
-     
-      
-      
+    <div className='App'>
+    <button>+</button>
+    <h1>{counter}</h1>
+    <button>-</button>
     </div>
+    
   );
 }
 
