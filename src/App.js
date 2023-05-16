@@ -1,11 +1,11 @@
 
 import './App.css';
 
-const kuchbhi = ()=>{
+const Kuchbhi = () => {
   return(
     <>
-    <p>NAME:PIYUSH</p>
-    <p>sem:4</p>
+     <p>NAME:PIYUSH</p>
+     <p>sem:4</p>
     </>
   )
 
@@ -16,9 +16,9 @@ const kuchbhi = ()=>{
   return (
     <div className="App">
      
-     <>
-     <kuchbhi />
-     </>
+     
+     <Kuchbhi />
+     
       
       
     </div>
