@@ -1,11 +1,11 @@
 
 import './App.css';
 
-const Kuchbhi = () => {
+const Kuchbhi = (props) => {
   return(
     <>
-     <p>NAME:PIYUSH</p>
-     <p>sem:4</p>
+     <p>name:{props.name}</p>
+     <p>sem:{props.sem}</p>
     </>
   )
 
@@ -17,7 +17,8 @@ const Kuchbhi = () => {
     <div className="App">
      
      
-     <Kuchbhi />
+     <Kuchbhi name={"piyush"} sem={6}/>
+     <Kuchbhi  name={"lvda"} sem={9}/>
      
       
       
