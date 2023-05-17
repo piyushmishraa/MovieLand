@@ -7,9 +7,9 @@ import './App.css';
   const[counter,setcounter]=useState(0);
   return (
     <div className='App'>
-    <button>+</button>
+    <button onClick={()=>{setcounter((prevCount)=>prevCount - 1)}}>-</button>
     <h1>{counter}</h1>
-    <button>-</button>
+    <button onClick={()=>{setcounter((prevCount)=>prevCount + 1)}}>+</button>
     </div>
     
   );
