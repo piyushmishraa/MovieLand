@@ -2,7 +2,7 @@ import React from "react";
 
 const MovieCard=({movie})=>{
     return (
-        <div className="container">
+    
         <div className="movie">
           <div>
             <h1>{movie.Year}</h1>
@@ -18,7 +18,7 @@ const MovieCard=({movie})=>{
 
           
         </div>
-      </div>
+      
 
     )
    
