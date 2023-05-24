@@ -1,18 +1,18 @@
 import React from "react";
 
-const MovieCard=()=>{
+const MovieCard=({movie})=>{
     return (
         <div className="container">
         <div className="movie">
           <div>
-            <h1>{movie1.Year}</h1>
+            <h1>{movie.Year}</h1>
           </div>
           <div className="poster">
-            <img src={movie1.Poster!=='N/A' ?  movie1.Poster :"https://via.placeholder.com/400"} alt={movie1.Title}/>
+            <img src={movie.Poster!=='N/A' ?  movie.Poster :"https://via.placeholder.com/400"} alt={movie.Title}/>
           </div>
           <div>
-          <h1>{movie1.Type}</h1>
-          <span>{movie1.Title}</span>
+          <h1>{movie.Type}</h1>
+          <span>{movie.Title}</span>
           
           </div>
 
@@ -23,3 +23,5 @@ const MovieCard=()=>{
     )
    
 }
+
+export  default MovieCard ;

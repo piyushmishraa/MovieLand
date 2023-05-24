@@ -1,12 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import { useEffect } from "react";
+import MovieCard from "./MovieCard";
 
 import './App.css';
 import searchIcon from './search.svg'
 //524730dd
 const URL ="http://www.omdbapi.com?apikey=524730dd"
-
-const movie1={
+ // eslint-disable-next-line
+ const movie1={
 Poster: "https://m.media-amazon.com/images/M/MV5BMDJhZjA5MWEtOTE5Yy00MWJiLTgwNjQtMDliOWI0NWJmZDZkXkEyXkFqcGdeQXVyMjY1ODY2Ng@@._V1_SX300.jpg",
 Title: "Lauf um Dein Leben - Vom Junkie zum Ironman",
 Type: "movie",
@@ -15,11 +16,12 @@ imdbID: "tt0954542"
 }
 
 const App= ()=>{
+       const [movies,setmovies]=useState([]);
        const searchMovies=async(title)=>{
        const response=await fetch(`${URL}&s=${title}`) 
        const data=await response.json();
        
-       console.log(data.Search);
+      setmovies(data.Search);
     } 
 
 
@@ -44,23 +46,24 @@ const App= ()=>{
         }}
         />
       </div>
-      <div className="container">
-        <div className="movie">
-          <div>
-            <h1>{movie1.Year}</h1>
+      {
+        movies?.length>0
+        ?(
+          <div className="container">
+          { movies.map((movie)=>(
+           <MovieCard movie={movie} />
+          ))}
           </div>
-          <div className="poster">
-            <img src={movie1.Poster!=='N/A' ?  movie1.Poster :"https://via.placeholder.com/400"} alt={movie1.Title}/>
+        )
+        :
+        (
+          <div className="empty">
+            <h1>No movie found</h1>
           </div>
-          <div>
-          <h1>{movie1.Type}</h1>
-          <span>{movie1.Title}</span>
-          
-          </div>
-
-          
-        </div>
-      </div>
+        )
+      }
+    
+     
      </div>
         
     );
