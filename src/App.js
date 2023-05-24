@@ -16,6 +16,7 @@ imdbID: "tt0954542"
 }
 
 const App= ()=>{
+       const[searchTerm,setSearchTerm]=useState('');
        const [movies,setmovies]=useState([]);
        const searchMovies=async(title)=>{
        const response=await fetch(`${URL}&s=${title}`) 
@@ -33,17 +34,17 @@ const App= ()=>{
       <h1>MovieLand</h1>
       <div className="search">
         <input placeholder="Search for movies"
-        value="ironman"
-        onChange={()=>{
+        value={searchTerm}
+        onChange={(e)=> setSearchTerm(e.target.value) 
 
-        }}
+        }
         />
         <img
         src={searchIcon}
         alt="search"
-        onClick={()=>{
+        onClick={()=>searchMovies(searchTerm)
 
-        }}
+        }
         />
       </div>
       {
@@ -54,9 +55,7 @@ const App= ()=>{
            <MovieCard movie={movie} />
           ))}
           </div>
-        )
-        :
-        (
+        ) : (
           <div className="empty">
             <h1>No movie found</h1>
           </div>
